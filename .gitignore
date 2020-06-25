@@ -138,9 +138,9 @@ dmypy.json
 cython_debug/
 
 #Others
-./DataSets/AirBnB/
-./DataSets/W42_Jan19/
-./DataSets/StackOverflow/developer_survey_2019/
-./code/Pew_Science*
-./code/StackOverflow*
+/DataSets/AirBnB/*
+/DataSets/W42_Jan19/*
+/DataSets/StackOverflow/developer_survey_2019/*
+/code/Pew_Science*
+/code/StackOverflow*
 *.DS_Store
