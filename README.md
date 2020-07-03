@@ -4,7 +4,7 @@ _this is my project #1 for my nanodegree in DataScience @ Udacity_
 _S.Villard June 2020_
 
 You'll find the main notebook [there](./code/StackPublicSurvey.ipynb) in ```./code```. This notebook calls different function located in ```./code/stack_functions.py```: ```convert2USD``` and ```getChoices```  
-The dataset (data in schema) used in this exmaple is located in ```./DataSets/StackOverflow/```  
+The dataset (data in schema) used in this exmaple is located in ```./DataSets/StackOverflow/```: Satck Overflow developer survey results from 2017 (see results [here](https://insights.stackoverflow.com/survey/2017)). 
 
 
 

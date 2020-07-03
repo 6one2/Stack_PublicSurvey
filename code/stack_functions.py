@@ -1,9 +1,15 @@
 import pandas as pd
 import numpy as np
+from collections import defaultdict
 from forex_python.converter import CurrencyRates, CurrencyCodes 
 from forex_python.bitcoin import BtcConverter
 
 def convert2USD(cur_name_from: str, amount: float):
+    '''
+    Use forex_python to convert the currencies found in the dataset into US dollars
+    cur_name_from - currency to convert in USD
+    amount - float represneting the amount to convert
+    '''
     
     if cur_name_from == 'U.S. dollars ($)':
         return amount
@@ -43,7 +49,6 @@ def getChoices(quest_series):
     get all unique responses to a categorical question (series example df['DevType'])
     dictIdx: list observation indices in which each choice is found 
     '''
-    from collections import defaultdict
     dictIdx = defaultdict(list)
     
     for idx, choice in enumerate(quest_series):
