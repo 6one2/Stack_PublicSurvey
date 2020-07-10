@@ -4,7 +4,7 @@ from collections import defaultdict
 from forex_python.converter import CurrencyRates, CurrencyCodes 
 from forex_python.bitcoin import BtcConverter
 
-def convert2USD(cur_name_from: str, amount: float):
+def convert2USD_today(cur_name_from: str, amount: float):
     '''
     Use forex_python to convert the currencies found in the dataset into US dollars
     cur_name_from - currency to convert in USD
@@ -43,6 +43,10 @@ def convert2USD(cur_name_from: str, amount: float):
     c = CurrencyRates()
     return c.convert(cur_code_from,'USD', amount)
 
+def convert2USD(amount, cur, df_rate):
+    rate = df_rate.query(f'currency_name == "{cur}"')['rate']
+    return float(rate*amount)
+
 
 def getChoices(quest_series):
     '''
@@ -58,3 +62,22 @@ def getChoices(quest_series):
                 dictIdx[x].append(idx)
     
     return dictIdx
+
+def createDummyVar(quest_series):
+    '''
+    Create dummy variable for multiple choices categorical variable. Split cat into n col corresponding...
+    to uniques choices, and fill with 1 if respondent chose this choice.
+    df - origin DataFrame
+    cat - name of the category (column) to be split and filled with 1
+    '''
+    
+    dictChoices = getChoices(quest_series)
+    cat = quest_series.name
+    col = [cat+'.'+str(k) for k in dictChoices.keys()]
+    n_df = pd.DataFrame(columns=col, index=quest_series.index).fillna(value=0)
+
+    for k,v in dictChoices.items():
+        col = cat+'.'+k
+        n_df.loc[v,col]=1
+    
+    return n_df
