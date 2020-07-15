@@ -55,7 +55,7 @@ def getChoices(quest_series):
     '''
     dictIdx = defaultdict(list)
     
-    for idx, choice in enumerate(quest_series):
+    for idx, choice in quest_series.items():
         if isinstance(choice, str):
             list_choice = [x.lstrip() for x in choice.split(';')]
             for x in list_choice:
