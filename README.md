@@ -34,19 +34,19 @@ The dataset (data and schema) used in this exmaple is located in ```./DataSets/S
 # __Results__
 
 ## how to break into the field?
-> __65.62%__ of recent-hires recommend _taking onlines course_  
-but only __29.16%__ took online course prior to landing their new job!<br/>
-__49.20%__ of recent-hires have a __Bachelor's degree__ as highest degree
+> __64.59%__ of recent-hires recommend _taking onlines course_  
+but only __30.33%__ took online course prior to landing their new job!<br/>
+__50.67%__ of recent-hires have a __Bachelor's degree__ as highest degree
 
 ## effect of training on job statisfaction and salary?
 > We did not find any impact of the training method on neither job satisfaction nor salary 
 
 ## what about data scientist specifically?
 > The same conclusions remain true when we consider the data scientist only<br/>
-Note that the subsample of data scientist is relatively small (567 observations)
+Note that the subsample of data scientist is relatively small (435 observations)
 
 ## salary prediction based on this dataset
-> A linear model based on Support Vector Regression does a decent job at predicting the salary of the respondents: __70.9%__ of the variance of the salary expressed in USD can be accounted for with linear model comprised of 3 numerical variables and 1070 categorical variables.  
+> A linear model based on Support Vector Regression does a decent job at predicting the salary of the respondents: __69.6%__ of the variance of the salary expressed in USD can be accounted for with linear model comprised of 3 numerical variables and 1066 categorical variables.  
 
 > __Country of residence__ (working place) and __years of coding__ look particularly important in the prediction of the salary.
 
